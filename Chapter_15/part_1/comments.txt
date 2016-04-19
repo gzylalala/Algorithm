@@ -1,0 +1,9 @@
+the problem in fact is a bag problem. 
+
+And in this dynamic programming problem, we mainly have three solutions:
+
+1. Recursive
+
+2. Bottom up
+
+3. Bag problem
