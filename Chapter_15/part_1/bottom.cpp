@@ -10,10 +10,15 @@ int length[MAX];
 int price[MAX];
 int result[MAX];
 
-int cutrod(int len[],int res[],int n)
+int cutrod(int price[],int res[],int n)
 {
+    res[0]=0;
+    
     for (int i=1;i<=n;i++)
-        for (int j=1;j<=i;j--)
+        for (int j=1;j<=i;j++)
+            res[i]=max(res[i],res[i-j]+price[j]);
+
+    return res[n];
             
 
 }
@@ -41,10 +46,10 @@ int main()
     else
         cerr<<"error"<<endl;
 
-    int Max=cutrod(price,rowNum);
+    memset(result,0,sizeof(result));
+    int Max=cutrod(price,result,rowNum);
 
     cout<<Max<<endl;
-    cout<<cutrod(price,4)<<endl;
 
 
-
+}
